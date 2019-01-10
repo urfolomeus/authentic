@@ -16,7 +16,7 @@ defmodule AuthenticWeb.Router do
   scope "/", AuthenticWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", SignupController, :new
   end
 
   # Other scopes may use custom stacks.
