@@ -35,6 +35,15 @@ npm run test
 cd ../..
 ```
 
+## Running linters
+
+```bash
+mix credo --strict
+cd authentic_web/assets
+npm run lint
+cd ../..
+```
+
 ## Running the server
 
 ```bash

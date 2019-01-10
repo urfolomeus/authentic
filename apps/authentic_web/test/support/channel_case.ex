@@ -14,6 +14,7 @@ defmodule AuthenticWeb.ChannelCase do
   """
 
   use ExUnit.CaseTemplate
+  alias Ecto.Adapters.SQL.Sandbox
 
   using do
     quote do
@@ -26,10 +27,10 @@ defmodule AuthenticWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Authentic.Repo)
+    :ok = Sandbox.checkout(Authentic.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Authentic.Repo, {:shared, self()})
+      Sandbox.mode(Authentic.Repo, {:shared, self()})
     end
 
     :ok
